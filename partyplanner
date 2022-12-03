@@ -1,0 +1,45 @@
+import csv
+
+FILENAME = "partyplanner.csv"
+
+def write_main(partyplanner):
+    with open (FILENAME, "w", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerows(partyplanner)
+        
+def read_main():
+    numb = []
+    with open (FILENAME, newline="") as file:
+        reader = csv.reader(file)
+        for row in reader:
+            partyplanner.append(row)
+    return partyplanner
+
+def main():
+    numb=int(input("Enter number of guests/members:"))
+    for i in range(numb):
+        user = input("Enter your name:")
+        utype = input("mem or guest:")
+        food = input("Enter your menu choice beef or veg or chicken:")
+        
+    fees=22.0
+    total=fees*numb
+    g=0
+    m=0
+    
+    for j in range(numb):
+        if utype == 'guest':
+            g=g+1
+        else:
+            m=m+1
+
+    print('name',user)
+    print('member or guest:',utype)
+    print('food type:',food)
+    print("fees paid:",fees)
+    print("total members:",m)
+    print("total guests:",g)
+    print("total fees paid by all attendees",total)
+
+if __name__ == "__main__":
+    main()
